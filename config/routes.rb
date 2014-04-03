@@ -1,9 +1,13 @@
 Myapp::Application.routes.draw do
 
+  get "posts/new"
   root to: "home#index"
  
 
-  resources :users
+  resources :users do
+    resources :posts
+
+  end
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create' 
