@@ -17,8 +17,8 @@ class PostsController < ApplicationController
   	   flash[:notice] = "Your post was created successfully"
   	   redirect_to user_posts_path
   	else
-  		flash[:notice] = "There was a problem creating your post"
-  		redirect_to :back
+  	   flash[:notice] = "There was a problem creating your post"
+  	   redirect_to :back
   	end
 	
   end

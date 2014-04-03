@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	has_many :posts
 
     attr_accessor :password
-	before_save :encrypt_password
+    before_save :encrypt_password
 
 	validates_confirmation_of :password
 
@@ -12,13 +12,13 @@ class User < ActiveRecord::Base
 	end
 
 	def self.authenticate(email,password)
-      user = User.where(email: email).first
-      if user && user.password_hash = BCrypt::Engine.hash_secret(password, user.password_salt)
-      	user
-      else
-      	nil
-      end
-
-		
+        user = User.where(email: email).first
+	      if user && user.password_hash = BCrypt::Engine.hash_secret(password, user.password_salt)
+	      	 user
+	      else
+	      	nil
+	      end
+	
 	end
+	
 end
